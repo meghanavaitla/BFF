@@ -1,0 +1,29 @@
+.card{
+    padding-bottom: 32px;
+}
+.spacer{
+    min-height: 100%;
+}
+.womens-wear{
+    margin-bottom: 50px;
+}
+.mens-wear .mencollection .men{
+    margin-bottom: 50px;
+}
+.mencollection{
+    text-align: center;
+    color: black;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.womencollection{
+    text-align: center;
+    color: black;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.card-deck{
+    border: none;
+}

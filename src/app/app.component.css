@@ -1,4 +1,12 @@
-
+.logo-name{
+    font-family: comic sans ms;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 0px;
+    text-align: center;
+    background-color: black;
+    color: pink;
+}
 .nav-link{
     margin-right: 30px;
     font-weight:500;

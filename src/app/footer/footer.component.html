@@ -1,1 +1,58 @@
-<p>footer works!</p>
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h1 style="font-family:comic sans ms;">Best<span>Fashion</span>Friend</h1>
+            <p>prides itself on offering on-trend styles catering to both young women and teens, that won’t break the
+                bank. BFF adheres to the concept that "everyone can enjoy the beauty of fashion." BFF is able to stay on
+                top of the latest fashion trends from around the globe while rapidly bringing these styles to market.
+            </p>
+            <div class="contact">
+                <span>
+                    <fa-icon [icon]="faPhone"></fa-icon>&nbsp; 123-456-789
+                </span><br>
+                <span>
+                    <fa-icon [icon]="faEnvelope"></fa-icon>&nbsp; info@bestfashionfriend.com
+                </span>
+            </div>
+
+        </div>
+
+        <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <br>
+            <ul>
+                <a href="#">
+                    <li>Home</li>
+                </a>
+                <a href="#">
+                    <li>Aboutus</li>
+                </a>
+                <a href="#">
+                    <li>Women</li>
+                </a>
+                <a href="#">
+                    <li>Men</li>
+                </a>
+            </ul>
+        </div>
+        <div class="footer-section contact-form">
+            <h2>Contact Us</h2>
+            <br>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control contact-input" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <textarea class="contact-input" placeholder="Enter your Message"></textarea><br>
+                <button class="btn btn send">
+                    <fa-icon [icon]="faEnvelope"></fa-icon> Send
+                </button>
+
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; bff.com | Best Fashion Friend
+    </div>
+</div>
