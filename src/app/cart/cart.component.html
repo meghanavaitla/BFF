@@ -1,0 +1,11 @@
+<div class="container text-center" *ngIf="cartItems.length == 0">
+    <fa-icon class=" mb-3" [icon]="faShoppingBag" style="font-size:10em;margin-top: 1em;"></fa-icon>
+    <h2 style="color:deeppink;">It's lonely here</h2>
+    <h4 style="color: #fc2779">Browse to watch awesome movies</h4>
+    <a routerLink="" class="btn btn mt-2" style="background-color: pink; color: black;">Continue Browsing</a>
+</div>
+<div class="container" *ngIf="cartItems.length > 0">
+   <div class="col-md-12" *ngFor="let c of cartItems;let i=index">
+        <img src="{{c.front}}" width="100px" height="100px">
+   </div>
+</div>

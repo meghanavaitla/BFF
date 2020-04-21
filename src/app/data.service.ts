@@ -8,7 +8,34 @@ export class DataService {
   serverUrl='http://localhost:3000/api';
 
   constructor(private http: HttpClient) { }
-  getBlouse(){
+  getBlouses(){
     return this.http.get(this.serverUrl+'/blouse');
+  }
+
+  getBottomwear(){
+    return this.http.get(this.serverUrl+'/bottomwear');
+  }
+
+  getTshirt(){
+    return this.http.get(this.serverUrl+'/tshirt');
+  }
+
+  getBottoms(){
+    return this.http.get(this.serverUrl+'/bottoms');
+  }
+  getJackets(){
+    return this.http.get(this.serverUrl+'/jackets');
+  }
+  getMenaccessories(){
+    return this.http.get(this.serverUrl+'/menaccessories');
+  }
+  getShorts(){
+    return this.http.get(this.serverUrl+'/shorts');
+  }
+  getTraditionalwear(){
+    return this.http.get(this.serverUrl+'/traditionalwear');
+  }
+  getWomenaccessories(){
+    return this.http.get(this.serverUrl+'/womenaccessories');
   }
 }

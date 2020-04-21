@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var blousesSchema = new Schema({
+var tshirtSchema = new Schema({
 
     name: String,
     front: String,
@@ -9,5 +9,5 @@ var blousesSchema = new Schema({
     size: []
 }
 );
-var blouse = mongoose.model('blouse', blousesSchema, 'blouse');
-module.exports = blouse;
+var tshirt = mongoose.model('tshirt', tshirtSchema, 'tshirt');
+module.exports = tshirt;
