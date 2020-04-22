@@ -11,7 +11,7 @@ var menaccessories = require('./backend/models/menaccessories');
 var womenaccessories = require('./backend/models/womenaccessories');
 var shorts = require('./backend/models/shorts');
 var traditionalwear = require('./backend/models/traditionalwear');
-
+var path = require('path');
 
 // ******** DB Connection ********
 
@@ -34,7 +34,7 @@ mongoose.connection.on('error', function (err) {
 // ******** DB Connection ********
 
 const app = express()
-  app.use(express.static(__dirname + '/dist/DFF'))
+  app.use(express.static(__dirname + '/dist/BFF'))
 
   app.use(bodyParser.urlencoded({
     extended: false
@@ -52,7 +52,7 @@ const app = express()
 
 //serve static files
 //dist -distributionng serve 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname + 'dist/BFF/index.html')))
+app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/dist/BFF/index.html')))
 app.get('/test', (req, res)=>{
   res.json({'status': 'Application is Up and Running'});
 })
