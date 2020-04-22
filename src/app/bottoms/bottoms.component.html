@@ -1,7 +1,7 @@
 
 <div class="container">
     <div class="card-deck">
-        <div *ngFor="let bw of bottoms" class="card mb-5" style="min-width: 18rem;">
+        <div *ngFor="let bw of bottoms; let i=index" class="card mb-5" style="min-width: 18rem;">
             <img src="{{bw.front}}" class="card-img-top">
             <img src="{{bw.back}}" class="img-top">
             <div class="card-body">
@@ -11,7 +11,7 @@
                 <p style="float: left; " class="card-text"><b> &#x20b9;{{bw.price}}/-</b></p>
                 <i style="float:right"class="far fa-heart"></i>
             </div>
-            <button style="width: 100%;" class="btn btn-success" >Add to Cart</button>
+            <button style="width: 100%;" class="btn btn-success" (click)="addItem(i)" >Add to Cart</button>
         </div>
     </div>
 </div>

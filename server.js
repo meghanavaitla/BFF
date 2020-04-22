@@ -11,6 +11,7 @@ var menaccessories = require('./backend/models/menaccessories');
 var womenaccessories = require('./backend/models/womenaccessories');
 var shorts = require('./backend/models/shorts');
 var traditionalwear = require('./backend/models/traditionalwear');
+var Order = require('./backend/models/order');
 
 // ******** DB Connection ********
 
@@ -179,7 +180,27 @@ app.get('/api/blouse', (req, res) => {
       }
     });
   })  
-
+  app.post('/api/orders', (req, res) => {
+    var ord = {
+      "user": "Admin",
+      "items": req.body
+    }
+    console.log(JSON.stringify(ord));
+    var newOrder = new Order(ord);
+    newOrder.save((err, doc) => {
+      if (err) {
+        console.log("Error occurred");
+        res.json({
+          "message": "error"
+        });
+      } else
+        res.json(doc);
+    })
+  })
+  
+  
+  
+  
 // ******** Backend Routes *********
 
 

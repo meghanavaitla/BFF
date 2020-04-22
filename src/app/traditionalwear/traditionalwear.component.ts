@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { CartService } from '../cart.service';
 @Component({
   selector: 'app-traditionalwear',
   templateUrl: './traditionalwear.component.html',
@@ -7,12 +8,16 @@ import { DataService } from '../data.service';
 })
 export class TraditionalwearComponent implements OnInit {
 traditionalwear;
-  constructor(private data:DataService) { }
+  constructor(private data:DataService,private cart:CartService) { }
 
   ngOnInit(): void {
     this.data.getTraditionalwear().subscribe(d=>{
       this.traditionalwear=d;
     })
   }
+  addItem(idx){
+    var t = this.traditionalwear[idx];
+  this.cart.cartItems.push(t);
+}
 
 }

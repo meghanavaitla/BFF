@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { CartService } from '../cart.service';
 @Component({
   selector: 'app-jackets',
   templateUrl: './jackets.component.html',
@@ -7,12 +8,16 @@ import { DataService } from '../data.service';
 })
 export class JacketsComponent implements OnInit {
 jackets;
-  constructor(private data:DataService) { }
+  constructor(private data:DataService,private cart:CartService) { }
 
   ngOnInit(): void {
     this.data.getJackets().subscribe(d=>{
       this.jackets=d;
     })
   }
+  addItem(idx){
+    var jacket = this.jackets[idx];
+  this.cart.cartItems.push(jacket);
+}
 
 }

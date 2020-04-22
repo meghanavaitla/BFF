@@ -1,8 +1,8 @@
 <div class="container text-center" *ngIf="cartItems.length == 0">
     <fa-icon [icon]="faShoppingBag" style="font-size: 10em;margin-top: 1em;"></fa-icon>
-    <h2 class="text-warning">It's lonely here</h2>
-    <h4 class="text-warning">Browse to watch awesome movies</h4>
-    <a routerLink="" class="btn btn-outline-success mt-2">Continue Browsing</a>
+    <h2 style="color: hotpink;">It's lonely here</h2>
+    <h4 style="color: hotpink;">Browse your Favourite Fashion Collection</h4>
+    <a routerLink="" style="background-color: pink; color: black;" class="btn btn-outline mt-2">Continue Browsing</a>
 </div>
 <div class="container" *ngIf="cartItems.length > 0">
     <div class="row">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-md-8">
                         <h5 style="color: darkslategray;">{{c.name}}</h5>
-                        <h6 style="color: blueviolet;">{{c.price}}</h6>
+                        <h6 style="color: blueviolet;"> &#x20b9;{{c.price}}</h6>
         
                     </div>
                     <div class="col-md-2 text-right">
@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="col-md-4 text-right">
-            <button class="btn btn-success" (click)="checkOut()">Checkout</button>
+            <button class="btn btn-success" (click)="checkOut()">PlaceOrder</button>
         </div>
     </div>
 </div>
