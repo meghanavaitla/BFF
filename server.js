@@ -34,7 +34,7 @@ mongoose.connection.on('error', function (err) {
 // ******** DB Connection ********
 
 const app = express()
-  app.use(express.static(__dirname + '/dist/gadgets'))
+  app.use(express.static(__dirname + '/dist/DFF'))
 
   app.use(bodyParser.urlencoded({
     extended: false
