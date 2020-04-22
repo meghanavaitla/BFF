@@ -56,6 +56,7 @@ app.use(cors());
 //dist -distributionng serve 
 app.use(express.static(__dirname + '/dist/BFF'));
 //send index.html from home(root) route
+app.listen(process.env.PORT || 3000);
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/dist/BFF/index.html')))
 
 app.get('/api/blouse', (req, res) => {
@@ -191,10 +192,7 @@ app.get('/api/blouse', (req, res) => {
 // ******** Backend Routes *********
 
 
-
+console.log('listening');
 
 // ******* Express Server **********
 
-const port = 3000
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
