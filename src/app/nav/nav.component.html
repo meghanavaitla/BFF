@@ -12,35 +12,35 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-              <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-              <a class="nav-link" href="home">AboutUs</a>
+              <a class="nav-link" routerLink="">AboutUs</a>
           </li>
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="women" id="navbarDropdown" role="button" data-toggle="dropdown"
+              <a class="nav-link dropdown-toggle" routerLink="women" id="navbarDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
                   Women
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="blouses">Blouses</a>
-                  <a class="dropdown-item" href="bottomwear">Bottoms</a>
-                  <a class="dropdown-item" href="traditionalwear">Ethnic Wear</a>
-                  <a class="dropdown-item" href="traditionalwear">Traditional Wear</a>
-                  <a class="dropdown-item" href="womenaccessories">Accessories</a>
+                  <a class="dropdown-item" routerLink="blouses">Blouses</a>
+                  <a class="dropdown-item" routerLink="bottoms">Bottoms</a>
+                  <a class="dropdown-item" routerLink="traditionalwear">Ethnic Wear</a>
+                  <a class="dropdown-item" routerLink="traditionalwear">Traditional Wear</a>
+                  <a class="dropdown-item" routerLink="womenaccessories">Accessories</a>
               </div>
           </li>
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="men" id="navbarDropdown" role="button" data-toggle="dropdown"
+              <a class="nav-link dropdown-toggle" routerLink="men" id="navbarDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
                   Men
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="shorts">Shorts</a>
-                  <a class="dropdown-item" href="bottoms">Bottoms</a>
-                  <a class="dropdown-item" href="jackets">Jackets</a>
-                  <a class="dropdown-item" href="tshirts">T-shirts</a>
-                  <a class="dropdown-item" href="menaccessories">Accessories</a>
+                  <a class="dropdown-item" routerLink="shorts">Shorts</a>
+                  <a class="dropdown-item" routerLink="bottoms">Bottoms</a>
+                  <a class="dropdown-item" routerLink="jackets">Jackets</a>
+                  <a class="dropdown-item" routerLink="tshirts">T-shirts</a>
+                  <a class="dropdown-item" routerLink="menaccessories">Accessories</a>
               </div>
           </li>
       </ul>
@@ -51,21 +51,21 @@
 
           
           <li class="nav-item dropdown">
-              <a class="nav-link" href="/login">
+              <a class="nav-link" routerLink="login">
                   <fa-icon [icon]="faUser"></fa-icon>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="signup">SIGN UP</a>
-                  <a class="dropdown-item" href="login">LOGIN</a>
+                  <a class="dropdown-item" routerLink="signup">SIGN UP</a>
+                  <a class="dropdown-item" routerLink="login">LOGIN</a>
               </div>
           </li>
 
 
-          <a class="nav-link" href="/whishlist">
+          <a class="nav-link" routerLink="whishlist">
               <fa-icon [icon]="faHeart"></fa-icon>
           </a>
 
-          <a class="nav-link" href="/cart">
+          <a class="nav-link" routerLink="cart">
               <fa-icon [icon]="faShoppingBag"></fa-icon>
           </a>
 
