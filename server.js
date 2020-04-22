@@ -12,7 +12,6 @@ var womenaccessories = require('./backend/models/womenaccessories');
 var shorts = require('./backend/models/shorts');
 var traditionalwear = require('./backend/models/traditionalwear');
 
-
 // ******** DB Connection ********
 
 var dbOptions = { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true, auto_reconnect: true };
@@ -34,7 +33,7 @@ mongoose.connection.on('error', function (err) {
 // ******** DB Connection ********
 
 const app = express()
-  app.use(express.static(__dirname + '/dist/DFF'))
+  app.use(express.static(__dirname + '/dist/BFF'))
 
   app.use(bodyParser.urlencoded({
     extended: false
@@ -42,22 +41,17 @@ const app = express()
   app.use(bodyParser.json())
   app.use(cors());
 
-// parse application/json
+
 
 
 
 // ** Body Parser ****
 
-// ******** Backend Routes *********
+app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/dist/BFF/index.html')))
 
-//serve static files
-//dist -distributionng serve 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname + 'dist/BFF/index.html')))
-app.get('/test', (req, res)=>{
-  res.json({'status': 'Application is Up and Running'});
-})
+
 app.get('/api/blouse', (req, res) => {
-    blouse.find({},'name front back price size', {
+    blouse.find({},null, {
       limit: 20
     }, (err, docs) => {
       if (err) {
@@ -191,7 +185,3 @@ app.get('/api/blouse', (req, res) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-
-
-// ******* Express Server **********
-
