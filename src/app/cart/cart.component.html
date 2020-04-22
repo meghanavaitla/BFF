@@ -1,13 +1,23 @@
-<div class="container text-center" *ngIf="cartItems.length == 0">
-    <fa-icon [icon]="faShoppingBag" style="font-size: 10em;margin-top: 1em;"></fa-icon>
-    <h2 style="color:deeppink">It's lonely here</h2>
-    <h4 style="color:deeppink">Browse to watch awesome movies</h4>
-    <a routerLink="" class="btn btn-outline-success mt-2">Continue Browsing</a>
-</div>
-<div class="container" *ngIf="cartItems.length > 0">
+<div class="container">
     <div class="row">
-        <div class="col-md-12" *ngFor="let c of cartItems ">
-            {{c.name}}
-        </div>
+            <div class="col-md-8">
+                <div class="card" *ngFor="let c of cartItems; let i= index" style="height: 120px;">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img [src]="c.front" height="100%" width="100%">
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{c.name}}</p>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn">Delete</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-warning mg-4">CheckOut</button>
+            </div>
     </div>
 </div>

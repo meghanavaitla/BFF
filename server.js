@@ -34,15 +34,13 @@ mongoose.connection.on('error', function (err) {
 // ******** DB Connection ********
 
 const app = express()
-const port = process.env.PORT || 3000
-// ** Body Parser ***
+  app.use(express.static(__dirname + '/dist/gadgets'))
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({
-  extended: false
-}))
-app.use(bodyParser.json())
-app.use(cors());
+  app.use(bodyParser.urlencoded({
+    extended: false
+  }))
+  app.use(bodyParser.json())
+  app.use(cors());
 
 // parse application/json
 
@@ -54,11 +52,10 @@ app.use(cors());
 
 //serve static files
 //dist -distributionng serve 
-app.use(express.static(__dirname + '/dist/BFF'));
-//send index.html from home(root) route
-app.listen(process.env.PORT || 3000);
-app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/dist/BFF/index.html')))
-
+app.get('/', (req, res) => res.sendFile(path.join(__dirname + 'dist/BFF/index.html')))
+app.get('/test', (req, res)=>{
+  res.json({'status': 'Application is Up and Running'});
+})
 app.get('/api/blouse', (req, res) => {
     blouse.find({},'name front back price size', {
       limit: 20
@@ -192,7 +189,9 @@ app.get('/api/blouse', (req, res) => {
 // ******** Backend Routes *********
 
 
-console.log('listening');
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
 
 // ******* Express Server **********
 
