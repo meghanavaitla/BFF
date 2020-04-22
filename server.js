@@ -15,8 +15,8 @@ var traditionalwear = require('./backend/models/traditionalwear');
 // ******** DB Connection ********
 
 var dbOptions = { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true, auto_reconnect: true };
-
-mongoose.connect("mongodb+srv://Meghana_07:vnrvjiet@cluster0-lahh1.mongodb.net/Fashion?retryWrites=true&w=majority", dbOptions);
+var connection_string = process.env.CONNECTION_STRING 
+mongoose.connect(connection_string, dbOptions);
 
 mongoose.connection.on('connected', function () {
 
@@ -26,7 +26,7 @@ mongoose.connection.on('connected', function () {
 
 mongoose.connection.on('error', function (err) {
 
-    console.log("Error while connectingcd to DB: " + err);
+    console.log("Error while connecting to DB: " + err);
 
 })
 
@@ -183,5 +183,4 @@ app.get('/api/blouse', (req, res) => {
 // ******** Backend Routes *********
 
 
-const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

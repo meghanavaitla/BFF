@@ -1,23 +1,35 @@
-<div class="container">
+<div class="container text-center" *ngIf="cartItems.length == 0">
+    <fa-icon [icon]="faShoppingBag" style="font-size: 10em;margin-top: 1em;"></fa-icon>
+    <h2 class="text-warning">It's lonely here</h2>
+    <h4 class="text-warning">Browse to watch awesome movies</h4>
+    <a routerLink="" class="btn btn-outline-success mt-2">Continue Browsing</a>
+</div>
+<div class="container" *ngIf="cartItems.length > 0">
     <div class="row">
-            <div class="col-md-8">
-                <div class="card" *ngFor="let c of cartItems; let i= index" style="height: 120px;">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img [src]="c.front" height="100%" width="100%">
-                        </div>
-                        <div class="col-md-8">
-                            <p>{{c.name}}</p>
-                        </div>
-                        <div class="col-md-2">
-                            <button class="btn">Delete</button>
-                        </div>
+        <div class="col-md-12 p-1 m-3">
+            <h3 style="color: lightslategray;">Total {{cartItems.length}} item(s)</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card p-1 mb-3" *ngFor="let c of cartItems;let i=index">
+                <div class="row">
+                    <div class="col-md-2 ">
+                        <img src="{{c.front}}" width="100px" height="100px" class="img-thumbnail">
                     </div>
-
+                    <div class="col-md-8">
+                        <h5 style="color: darkslategray;">{{c.name}}</h5>
+                        <h6 style="color: blueviolet;">{{c.price}}</h6>
+        
+                    </div>
+                    <div class="col-md-2 text-right">
+                        <button class="btn" (click)="remove(i)">Delete</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <button class="btn btn-warning mg-4">CheckOut</button>
-            </div>
+        </div>
+        <div class="col-md-4 text-right">
+            <button class="btn btn-success" (click)="checkOut()">Checkout</button>
+        </div>
     </div>
 </div>

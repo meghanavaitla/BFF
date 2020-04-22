@@ -38,4 +38,8 @@ export class DataService {
   getWomenaccessories(){
     return this.http.get(this.serverUrl+'/womenaccessories');
   }
+  completeOrder(items)
+  {
+    return this.http.post(this.serverUrl+'/orders',items);
+  }
 }

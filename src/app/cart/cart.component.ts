@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { DataService } from '../data.service';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cart',
@@ -10,19 +11,20 @@ import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 })
 export class CartComponent implements OnInit {
   faShoppingBag=faShoppingBag;
-  constructor(private cart: CartService) { }
+  faTrash=faTrash;
+  constructor(private cart: CartService,private data: DataService) { }
 cartItems;
   ngOnInit() {
     this.cartItems=this.cart.cartItems;
   }
 
-  /*remove(indx) {
+remove(indx) {
     this.cart.cartItems.splice(indx, 1);
   }
   checkOut() {
     this.data.completeOrder(this.cartItems).subscribe(res => 
       { alert("Checkout Successful"); }
     )
-  }*/
+  }
 
 }
