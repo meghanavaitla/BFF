@@ -1,16 +1,24 @@
 <div class="container">
+<div class="blouses">
+    <img src="https://lh3.googleusercontent.com/yi1fHs9_Jwrwmt0xeWxC9Wy57M0wJkZDb85JyKznwZey5ilCS11BFL4aUEQAiMY_MuHHvJLaqI17YackfClVXS9dQXziTuX15SurjfJV__cG-3xeTO8lAIQmnZKDD-mQ_rxE11ToAPWC7mQm4KQ3yt5mLDJA6UAnApJR2KersTIhROvd6y3dY_VDUZAp4RDSinVv4lx791OOB1aieIcL8Qvl0kn2gem55FPt6aCzE_sD7TytCuszXAhtdhZHaYFR7OEs3J6IKfy6LETnRri5VMYHtXUg3xnlaTH2Jg4hjvvZ5lokZXBBmGXIdyRuOs2uhC1jD5oS9ajXKWu5hXN7QvKfUgnogtPG0JSf0_OStVqcvm4MiMVBY-MvBGj_YCQRzGzopAOPO-pdC609Ks7kt3LEvLoWOTIiE9Oq95l_RrW_9WLZxGzTRpmfhEIzvo4dxeGTzA8RnVJrEanZHYZXKm59kDHlmtBFQl5RRf9YxPrt9WYmtH6deAAe7h-EHxNDq68uv5S3leXl3rZv3pUE78GZ53bKRCRXxIoQO5K2hIHox2CdDCsYw_D1A5Y8YuY2arYifopwQz0mUdbWqVGrMRPQ2JPssK2sEllgR9mY7b_3xDGJaH9qfc4SfcKQCjXk3-K2-DRCjvQjZfOszPi75HfosI30cyDmiMz85TYSWVGMMrh-qr5cJWZeaxjvlQ=w945-h300-no"
+        width="100%" height="300">
+</div>
+</div>
+<br>
+<br>
+<div class="container">
     <div class="card-deck">
         <div *ngFor="let b of blouses; let i=index" class="card mb-5" style="min-width: 15rem;">
             <img src="{{b.front}}" class="card-img-top">
             <img src="{{b.back}}" class="img-top">
             <div class="card-body">
-                <h3 data-toggle="tooltip"  title="{{b.name|lowercase}}">
+                <h3 data-toggle="tooltip" title="{{b.name|lowercase}}">
                     {{(b.name.length>14)?(b.name | slice:0:12)+'..':(b.name)}}
                 </h3>
                 <p style="float: left; " class="card-text"><b> &#x20b9;{{b.price}}/-</b></p>
                 <fa-icon style="float:right" [icon]="faHeart"></fa-icon>
             </div>
-            <button style="width: 100%;" class="btn btn-success"  (click)="addItem(i)">Add to Cart</button>
+            <button style="width: 100%;" class="btn btn-success" (click)="addItem(i)">Add to Cart</button>
         </div>
     </div>
 </div>

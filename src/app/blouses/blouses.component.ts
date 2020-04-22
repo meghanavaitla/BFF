@@ -19,8 +19,9 @@ export class BlousesComponent implements OnInit {
     });
   }
   addItem(idx){
-    var blouse = this.blouses[idx];
+     var blouse = this.blouses[idx];
    this.cart.cartItems.push(blouse);
+  
   }
 
 }

@@ -10,13 +10,12 @@ import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 })
 export class CartComponent implements OnInit {
   faShoppingBag=faShoppingBag;
-  constructor(private cart: CartService, private data: DataService) { }
-  cartItems;
+  constructor(private cart: CartService) { }
+cartItems;
   ngOnInit() {
-    this.cartItems = this.cart.cartItems;
-
+    this.cartItems=this.cart.cartItems;
   }
-  
+
   /*remove(indx) {
     this.cart.cartItems.splice(indx, 1);
   }

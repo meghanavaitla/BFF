@@ -42,7 +42,7 @@ import {FormsModule} from '@angular/forms';
     TraditionalwearComponent,
     TshirtComponent,
     WomenComponent,
-    WomenaccessoriesComponent
+    WomenaccessoriesComponent,
   ],
   imports: [
     BrowserModule,
